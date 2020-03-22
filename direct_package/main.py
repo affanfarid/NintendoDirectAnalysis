@@ -22,17 +22,10 @@ binEdges = sp.arange(-3.5, 3.5, 0.5).tolist()
 #starting date from when you want to analyze (could add an enddate in the future
 sinceDate = dt.datetime(2017, 1, 11)
 
-categoryList = ["General", "Pokemon"]
+categoryList = ["Pokemon"]
 hypeOfDirect ={ 'm1':[] }
 impactOfDirect = { 'm1':[] ,'m2':[] }
 
-#def formatToDataFrame(data):
-#    x = pd.DataFrame(data,
-#        #index=['2017-01-06', '2020-02-10'],
-#        columns=['Open','Close','High','Low']
-#    )
-#
-#    return x
 
 def weekdayValid(date):
     #checks if date is between tuesday and thursday inclusive
@@ -93,7 +86,7 @@ def printLineGraph(d):
     plt.plot(lineX, yPoints)
 
 def printMedianAndMean(list):
-    mean = statistics.median(list)
+    mean = statistics.mean(list)
     median = statistics.median(list)
     print("Median: ", str(median), " Mean: ", str(mean))
     
@@ -154,7 +147,7 @@ def main():
     print("Impact of Direct M1 " + str(impactOfDirect['m1']))
     print("Impact of Direct M2 " + str(impactOfDirect['m2']))
     
-    detailString = ""
+
     printHistogram(hypeOfDirect['m1'], "Hype of Direct: Measure 1")
     printMedianAndMean(hypeOfDirect['m1'])
     printHistogram(impactOfDirect['m1'], "Impact of Direct: Measure 1")
