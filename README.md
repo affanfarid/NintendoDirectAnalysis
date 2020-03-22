@@ -17,3 +17,7 @@ pandas_datareader
 How to run:
 
 `python3 direct_package/main.py`
+
+
+
+[Want to read about the project? Check it out!](https://medium.com/@affanfarid/gaming-the-market-8d78f6ae143)
