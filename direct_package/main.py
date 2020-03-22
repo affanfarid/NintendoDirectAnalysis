@@ -4,6 +4,7 @@ import datetime as dt
 import re
 import csv
 
+import statistics
 import pandas as pd
 import yfinance as yf
 import yahoofinancials
@@ -90,7 +91,11 @@ def printLineGraph(d):
     lineX = range(0,len(yPoints))
     
     plt.plot(lineX, yPoints)
-    
+
+def printMedianAndMean(list):
+    mean = statistics.median(list)
+    median = statistics.median(list)
+    print("Median: ", str(median), " Mean: ", str(mean))
     
 
 def main():
@@ -151,8 +156,11 @@ def main():
     
     detailString = ""
     printHistogram(hypeOfDirect['m1'], "Hype of Direct: Measure 1")
+    printMedianAndMean(hypeOfDirect['m1'])
     printHistogram(impactOfDirect['m1'], "Impact of Direct: Measure 1")
+    printMedianAndMean(impactOfDirect['m1'])
     printHistogram(impactOfDirect['m2'], "Impact of Direct: Measure 2" )
+    printMedianAndMean(impactOfDirect['m2'])
     
 
 if __name__ == "__main__":
